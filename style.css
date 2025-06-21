@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
-
 * {
     padding: 0;
     margin: 0;
@@ -7,7 +5,14 @@
 }
 
 body {
-    font-family: 'Nunito' serif;
+    font-family: 'JetBrains Mono';
+    background-color: rgb(24, 24, 24);
+}
+
+main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px; /* opcional: dá um respiro nas laterais */
 }
 
 header {
@@ -16,19 +21,143 @@ header {
     padding: 30px 0;
 }
 
+nav#menu {
+    padding: 25px 50px;
+}
+
 nav#menu ul#items {
     list-style: none;
     display: flex;
     gap: 50px;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
 }
 
 nav#menu ul#items li.item a {
     text-decoration: none;
-    color: rgb(39, 39, 39);
+    color: rgb(250, 250, 250);
 }
 
-nav#menu ul#items li.item a:hover {
+nav#menu ul#items li.item a:hover,
+nav#menu ul#items li.item a:focus {
     text-decoration: underline;
-    scale: 1.05;
+    color: rgb(240, 62, 49);
 }
+
+section#thats-me {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* translations */
+header nav#available-translations {
+    list-style: none;
+    display: flex;  
+    font-size: 1.2rem;
+    align-items: center;
+    padding-left: 30px;
+}
+
+header nav#available-translations button {
+    font-size: 1.3rem;
+    padding: 4px;
+    background-color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+section#thats-me h1 {
+    font-size: 3.5em;
+    margin-top: 100px;
+    color: #fff;
+}
+
+section#thats-me h1 strong {
+    color: rgb(79, 79, 255);
+}
+
+section#thats-me h2 {
+    font-size: 1.3em;
+    color: rgb(221, 221, 221);
+    margin-top: 10px;
+}
+
+section#thats-me p {
+    font-size: 1em;
+    color: rgb(236, 236, 236);
+    margin-top: 40px;
+    line-height: 25px;
+}
+section#stack {
+    margin-top: 80px;
+  }
+  
+  h3 {
+    font-size: 1.5em;
+    font-weight: 400;
+    color: #e2e2e2;
+  }
+  
+  /* Slider container */
+  .slider {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    margin-top: 30px;
+  }
+  
+  /* Faixa animada que desliza */
+  .slide-track {
+    display: flex;
+    width: max-content;
+    animation: scroll 20s linear infinite;
+  }
+  
+  /* Grupo de logos (duplicado no HTML) */
+  .slide-content {
+    display: flex;
+  }
+  
+  /* Estilo de cada logo */
+  .logo {
+    height: 100px;
+    width: auto;
+    margin: 0 2rem;
+    object-fit: contain;
+    flex-shrink: 0;
+  }
+  
+  /* Animação contínua */
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+  
+  /* Fades nas laterais */
+  .slider::before,
+  .slider::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 150px;
+    height: 100%;
+    pointer-events: none;
+    z-index: 10;
+  }
+  
+  .slider::before {
+    left: 0;
+    background: linear-gradient(to right, rgb(24, 24, 24) 0%, transparent 100%);
+  }
+  
+  .slider::after {
+    right: 0;
+    background: linear-gradient(to left, rgb(24, 24, 24) 0%, transparent 100%);
+  }
+  
+  
